@@ -1,0 +1,247 @@
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #3f3f3f;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 160px;
+
+  .article-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1080px;
+    width: 90%;
+    margin: 100px auto 80px;
+    gap: 80px 3%;
+  }
+
+  .article-list.page-article .page-article-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    max-width: 770px;
+    margin-left: 0;
+    margin-right: 0;
+    gap: 70px;
+  }
+
+  .article-list.page-article .page-article-sub {
+    margin-left: auto;
+    max-width: 230px;
+  }
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  max-width: 768px;
+  margin-bottom: 123.68px;
+
+  .list-item {
+    display: flex;
+    // gap: 31px;
+
+    &__img {
+      max-width: 360px;
+      border-radius: 0px 37.5px 0px 37.5px;
+      overflow: hidden;
+
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__box {
+      padding-left: 31px;
+    }
+
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: calc(32 / 20);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 9px;
+    }
+
+    &__desc {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: calc(26 / 14);
+      margin-bottom: 15px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &__bottom {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Noto Sans JP", sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: calc(26 / 13);
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 18px;
+        width: 1px;
+        background-color: #cecece;
+        left: 23%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .date-submited {
+        color: #8f8f8f;
+      }
+
+      .key-words {
+        span {
+          color: #e88a8a;
+        }
+      }
+    }
+  }
+
+  .list-item:not(:last-child) {
+    margin-bottom: 63.68px;
+  }
+  .list-item:first-child {
+    margin-bottom: 60.68px;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e88a8a;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: calc(23.17px / 16px);
+  text-align: center;
+
+  .prev-btn {
+    margin-right: 21.5px;
+  }
+  .next-btn {
+    margin-left: 21.5px;
+  }
+
+  span {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(23.17 / 16);
+    color: #e88a8a;
+    text-align: center;
+    align-content: center;
+  }
+
+  span.current-page {
+    color: #fff;
+    background: #e88a8a;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .container .article-list.page-article .page-article-main {
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+}
+
+@media screen and (max-width: 750px) {
+  .container .article-list {
+    margin: 10vw 0 10vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8vw;
+    width: 100%;
+    padding: 0 3.333vw;
+  }
+  .container .article-list.page-article .page-article-main {
+    flex-direction: column;
+  }
+
+  .category-list__wrapper {
+    padding-bottom: 30.267vw;
+  }
+  .category-list {
+    margin-bottom: 10.133vw;
+    .list-item {
+      margin-bottom: 5.947vw !important;
+      &__img {
+        max-width: 43.333vw;
+        flex-shrink: 0;
+      }
+
+      &__box {
+        padding-left: 4.4vw;
+      }
+
+      &__title {
+        font-size: 3.467vw;
+        margin-bottom: 5.333vw;
+      }
+
+      &__desc {
+        display: none;
+      }
+
+      &__bottom {
+        font-size: 2.667vw;
+        justify-content: flex-start;
+        gap: 6.667vw;
+      }
+
+      .key-words {
+        span:not(:first-child) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .pagination {
+    span {
+      width: 6.669vw;
+      height: 6.669vw;
+      border-radius: 1.043vw;
+      font-size: 3.333vw;
+      line-height: calc(36.22 / 25);
+    }
+  }
+}
